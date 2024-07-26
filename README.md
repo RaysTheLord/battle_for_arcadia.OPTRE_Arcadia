@@ -26,7 +26,12 @@ A custom arsenal is defined in arsenal_presets/custom.sqf, to pair with the leve
 
 IF YOU WANT TO REMOVE THE ARSENAL RESTRICTIONS: It's as easy as leaving all the arrays in the arsenal blank.  You can also disable arsenal restrictions through normal Liberation settings (e.g. by using the default blacklist).
 
-#Questions:
+### Unit Changes
+
+To set a unit as an ODST or Spartan, simply open up the mission and editor and change the unit type to any ODST or any Spartan.
+
+# Questions:
+
 You can find me in the [FoddSquad](discord.gg/UselessFodder), where I work on cool Arma projects, or in the [OPTRE discord](https://steamcommunity.com/linkfilter/?u=https%3A%2F%2Fdiscord.gg%2FxaK2y32KSu) if there are any questions or issues.
 
 Have fun!
