@@ -190,7 +190,25 @@ if ((!(_sector in blufor_sectors)) && (([markerPos _sector, [_opforcount] call K
         } forEach _allbuildings;
         if (KP_liberation_sectorspawn_debug > 0) then {[format ["Sector %1 (%2) - manage_one_sector found %3 building positions", (markerText _sector), _sector, (count _buildingpositions)], "SECTORSPAWN"] remoteExecCall ["KPLIB_fnc_log", 2];};
         if (count _buildingpositions > _minimum_building_positions) then {
-            _managed_units = _managed_units + ([_infsquad, _building_ai_max, _buildingpositions, _sector] call KPLIB_fnc_spawnBuildingSquad);
+            _units_building = [_infsquad, _building_ai_max, _buildingpositions, _sector] call KPLIB_fnc_spawnBuildingSquad;
+            //Force each unit into own group
+            _building_grp_normal = createGroup [GRLIB_side_enemy, true];
+            _building_grp_wbk = createGroup [GRLIB_side_enemy, true];
+            
+            {
+                if((count (units _building_grp_normal)) >= 10) then {
+                    _building_grp_normal = createGroup [GRLIB_side_enemy, true];
+                };
+                if((count (units _building_grp_wbk)) >= 10) then {
+                    _building_grp_wbk = createGroup [GRLIB_side_enemy, true];
+                };
+                if (["WBK", typeOf _x] call BIS_fnc_inString || ["OPTREW", typeOf _x] call BIS_fnc_inString || ["IMS", typeOf _x] call BIS_fnc_inString) then {
+                    [_x] joinSilent _building_grp_wbk;
+                } else {
+                    [_x] joinSilent _building_grp_normal;
+                };
+            } forEach _units_building;
+            _managed_units = _managed_units + _units_building;
         };
     };
 

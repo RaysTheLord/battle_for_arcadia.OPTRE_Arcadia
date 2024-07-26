@@ -47,7 +47,7 @@ for "_i" from 1 to _amount do {
         _grp = createGroup [GRLIB_side_enemy, true];
     };
     //Ditto for Grunts
-    if (count (units _grp) >= 10) then {
+    if (count (units _gruntsGrp) >= 10) then {
         _gruntsGrp = createGroup [GRLIB_side_enemy, true];
     };
 

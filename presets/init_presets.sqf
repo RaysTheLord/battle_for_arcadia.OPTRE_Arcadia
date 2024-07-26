@@ -193,7 +193,7 @@ opfor_choppers                              = opfor_choppers                    
 opfor_air                                   = opfor_air                                 select {[_x] call KPLIB_fnc_checkClass};
 
 // Resistance
-KP_liberation_guerilla_units                = KP_liberation_guerilla_units              select {[_x] call KPLIB_fnc_checkClass};
+//KP_liberation_guerilla_units                = KP_liberation_guerilla_units              select {[_x] call KPLIB_fnc_checkClass};
 KP_liberation_guerilla_vehicles             = KP_liberation_guerilla_vehicles           select {[_x] call KPLIB_fnc_checkClass};
 
 // Civilians

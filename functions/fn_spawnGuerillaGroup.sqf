@@ -25,23 +25,21 @@ params [
 private _tier = [] call KPLIB_fnc_getResistanceTier;
 private _cr_multi = [] call KPLIB_fnc_crGetMulti;
 if (_amount == 0) then {_amount = (6 + (round (random _cr_multi)) + (round (random _tier)));};
-private _weapons = missionNamespace getVariable ("KP_liberation_guerilla_weapons_" + str _tier);
-private _uniforms = missionNamespace getVariable ("KP_liberation_guerilla_uniforms_" + str _tier);
-private _vests = missionNamespace getVariable ("KP_liberation_guerilla_vests_" + str _tier);
-private _headgear = missionNamespace getVariable ("KP_liberation_guerilla_headgear_" + str _tier);
 
-//OVERRIDE LIST OF UNITS
-_t1_elites_pool = ["OPTRE_CPD_Officer_M392", "OPTRE_CPD_Officer_M45", "OPTRE_CPD_Officer_M7", "OPTRE_CPD_Officer_MA37K"];
-_t2_elites_pool = ["OPTRE_CPD_Riot_Officer"];
-_t2_elites_pool = ["OPTRE_CPD_SWAT_Bulldog", "OPTRE_CPD_SWAT_M392", "OPTRE_CPD_SWAT_M45", "OPTRE_CPD_SWAT_M7", "OPTRE_CPD_SWAT_MA37K", "OPTRE_CPD_SWAT_RIOTCQQS48", "OPTRE_CPD_SWAT_RIOTM7", "OPTRE_CPD_SWAT_SRS99", "OPTRE_CPD_SWAT_Tactical_Sniper", "OPTRE_CPD_SWAT_VK78"];
+//List of units
+_t1_elites_pool = t1_officer_pool;
+_t2_elites_pool = t2_officer_pool;
+_t3_elites_pool = t3_officer_pool;
 
-_grunts_pool = ["OPTRE_CPD_Officer"];
-_hunter_pool = ["OPTRE_CPD_Juggernaut"];
-_hunter_chance = 5 * _tier;
+_grunts_pool = grunts_pool;
+_hunter_pool = hunter_pool;
+_hunter_chance = hunter_chance * _tier;
+
 _hunter_left = 0;
 
 // Spawn guerilla units
 private _grp = createGroup [GRLIB_side_resistance, true];
+
 private _unit = objNull;
 private _weapon = [];
 private _selected_unit = "";

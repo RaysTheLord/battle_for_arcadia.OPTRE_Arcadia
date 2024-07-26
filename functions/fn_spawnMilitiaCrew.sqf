@@ -24,8 +24,19 @@ if (isNull _vehicle) exitWith {["Null object given"] call BIS_fnc_error; false};
 // Spawn units
 private _grp = createGroup [GRLIB_side_enemy, true];
 private _units = [];
+//Select a unit at random to sample
+_sample_unit = selectRandom militia_squad;
+
+_wbk_only = false;
+if (["WBK", _sample_unit] call BIS_fnc_inString || ["OPTREW", _sample_unit] call BIS_fnc_inString || ["IMS", _sample_unit] call BIS_fnc_inString) then {
+    _wbk_only = true;
+};
 for "_i" from 1 to 3 do {
-    _units pushBack ([selectRandom militia_squad, getPos _vehicle, _grp] call KPLIB_fnc_createManagedUnit);
+    _selected_unit = selectRandom militia_squad;
+    while { !((_wbk_only && (["WBK", _selected_unit] call BIS_fnc_inString || ["OPTREW", _selected_unit] call BIS_fnc_inString || ["IMS", _selected_unit] call BIS_fnc_inString)) || (!_wbk_only && !(["WBK", _selected_unit] call BIS_fnc_inString || ["OPTREW", _selected_unit] call BIS_fnc_inString || ["IMS", _selected_unit] call BIS_fnc_inString))) } do {
+        _selected_unit = selectRandom militia_squad;
+    };
+    _units pushBack ([_selected_unit, getPos _vehicle, _grp] call KPLIB_fnc_createManagedUnit);
 };
 
 // Assign to vehicle
