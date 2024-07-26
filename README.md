@@ -32,6 +32,6 @@ To set a unit as an ODST or Spartan, simply open up the mission and editor and c
 
 # Questions:
 
-You can find me in the [FoddSquad](discord.gg/UselessFodder), where I work on cool Arma projects, or in the [OPTRE discord](https://steamcommunity.com/linkfilter/?u=https%3A%2F%2Fdiscord.gg%2FxaK2y32KSu) if there are any questions or issues.
+You can find me in the [FoddSquad](https://discord.gg/UselessFodder), where I work on cool Arma projects, or in the [OPTRE discord](https://steamcommunity.com/linkfilter/?u=https%3A%2F%2Fdiscord.gg%2FxaK2y32KSu) if there are any questions or issues.
 
 Have fun!
