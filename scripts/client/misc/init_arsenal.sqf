@@ -62,6 +62,7 @@ if (KP_liberation_arsenalUsePreset) then {
     };
     //Add items from each default arsenal intelligently
     {
+        /*
         if ( isClass (configFile >> "CfgWeapons" >> _x)) then {
            //is weapon
            _used_arsenal_weapons pushBackUnique _x;
@@ -79,6 +80,12 @@ if (KP_liberation_arsenalUsePreset) then {
             continue;
         };
         //None of those?  Then it's an item
+        _used_arsenal_items pushBackUnique _x;
+        */
+        //Screw smart adding, add everything!
+        _used_arsenal_weapons pushBackUnique _x;
+        _used_arsenal_magazines pushBackUnique _x;
+        _used_arsenal_backpacks pushBackUnique _x;
         _used_arsenal_items pushBackUnique _x;
         
     } forEach _correct_arsenal;

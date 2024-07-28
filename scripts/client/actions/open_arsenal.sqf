@@ -10,7 +10,7 @@ if (KP_liberation_ace && KP_liberation_arsenal_type) then {
 //Repopulate the arsenal again
 execVM "scripts\client\misc\init_arsenal.sqf";
 
-waitUntil {sleep 0.1; count (missionNamespace call BIS_fnc_getVirtualItemCargo) > 0};
+waitUntil {sleep 0.5; count (missionNamespace call BIS_fnc_getVirtualItemCargo) > 0};
 
 if (KPLIB_directArsenal) exitWith {
     if (KP_liberation_ace && KP_liberation_arsenal_type) then {
