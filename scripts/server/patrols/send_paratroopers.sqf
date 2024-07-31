@@ -93,8 +93,8 @@ if (alive _newvehicle) then {
 
     _units_arr = [opfor_squad_leader, opfor_sentry, opfor_sentry, opfor_rifleman, opfor_rifleman, opfor_rifleman, opfor_rifleman, opfor_grenadier]; //Ordered list of units to spawn in a paratrooper group
 
-    while {(count (units _para_group)) < 8} do {
-        _selected_unit = _units_arr select count (units _para_group);
+    while {((count (units _para_group)) + (count (units _para_group_grunt))) < 8} do {
+        _selected_unit = _units_arr select ((count (units _para_group)) + (count (units _para_group_grunt)));
         if (["WBK", _selected_unit] call BIS_fnc_inString || ["OPTREW", _selected_unit] call BIS_fnc_inString || ["IMS", _selected_unit] call BIS_fnc_inString) then {
             [_selected_unit, getPos _newvehicle, _para_group_grunt] call KPLIB_fnc_createManagedUnit;
         } else {
@@ -102,14 +102,15 @@ if (alive _newvehicle) then {
         };        
     };
 
-    _newvehicle setFuel 1;
-    _newvehicle flyInHeight 100;
 };
+
+_newvehicle setFuel 1;
 
 sleep 0.2;
 while {(count (waypoints _pilot_group)) != 0} do {deleteWaypoint ((waypoints _pilot_group) select 0);};
 while {(count (waypoints _para_group)) != 0} do {deleteWaypoint ((waypoints _para_group) select 0);};
-while {(count (waypoints _para_group_grunt)) != 0} do {deleteWaypoint ((waypoints _para_group) select 0);};
+while {(count (waypoints _para_group_grunt)) != 0} do {deleteWaypoint ((waypoints _para_group_grunt) select 0);};
+
 sleep 0.2;
 {_x doFollow leader _pilot_group} foreach units _pilot_group;
 {_x doFollow leader _para_group} foreach units _para_group;
@@ -158,4 +159,5 @@ _waypoint setWaypointType "SAD";
 _waypoint = _para_group_grunt addWaypoint [_targetpos, 100];
 _waypoint setWaypointType "SAD";
 
-_pilot_group setCurrentWaypoint [_para_group, 1];
+_para_group setCurrentWaypoint [_para_group, 1];
+_para_group_grunt setCurrentWaypoint [_para_group_grunt, 1];
