@@ -73,7 +73,7 @@ if (isServer) then {
         [_unit, ["Field Burial", { 
             params ["_target", "_caller", "_actionId", "_arguments"];
             //Give XP related to the body's rank
-            _give_score = 25;
+            _give_score = 50;
             [getPlayerUID _caller, _give_score] call add_ranked_score;
             
             //Remove the target

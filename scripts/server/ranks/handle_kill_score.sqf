@@ -40,7 +40,7 @@ if ((vehicle _killer isEqualTo _killer) && (_killer distance _killed) > 500) the
     _distance_modifier = _distance_modifier + ((_killer distance _killed)/1000);
 };
 
-_base_score = 25;
+_base_score = 50;
 
 
 _score_multiplier = 1;
