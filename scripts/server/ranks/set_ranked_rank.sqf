@@ -41,9 +41,9 @@ if !(_player isEqualTo objNull) then {
     
     if (_prev_rank == _rank) exitWith {true};
     if (_rank < _prev_rank) then {
-        [name player + " has been demoted to " + (_ranks select _rank)] remoteExec ["systemChat", 0];
+        [name _player + " has been demoted to " + (_ranks select _rank)] remoteExec ["systemChat", 0];
     } else {
-        [name player + " has been promoted to " + (_ranks select _rank)] remoteExec ["systemChat", 0];
+        [name _player + " has been promoted to " + (_ranks select _rank)] remoteExec ["systemChat", 0];
     };
     
 };
