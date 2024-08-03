@@ -8,7 +8,7 @@
 
 // Enemy infantry classes
 opfor_officer = "OPTRE_FC_Elite_FieldMarshal";                           // Officer
-opfor_squad_leader = "OPTRE_FC_Elite_Officer";                        // Squad Leader
+opfor_squad_leader = "WBK_EliteMainWeap_6";                        // Squad Leader
 opfor_team_leader = "WBK_EliteMainWeap_2";                                   // Team Leader
 opfor_sentry = "OPTRE_Jackal_F";                                      // Rifleman (Lite)
 opfor_rifleman = "WBK_Grunt_5";                                         // Rifleman
@@ -43,7 +43,7 @@ Therefore, adding the same value twice or three times means they are more likely
 /* Militia infantry. Lightweight soldier classnames the game will pick from randomly as sector defenders.
 Think of them like garrison or military police forces, which are more meant to control the local population instead of fighting enemy armies. */
 militia_squad = [
-    "WBK_EliteMainWeap_2",
+    "OPTRE_FC_Elite_Minor2",
 	"OPTRE_Jackal_Infantry2_F",
 	"WBK_Grunt_5",
 	"WBK_Grunt_1",
@@ -59,7 +59,11 @@ militia_squad = [
 
 // Militia vehicles. Lightweight vehicle classnames the game will pick from randomly as sector defenders. Can also be empty for only infantry milita.
 militia_vehicles = [
-    "OPTRE_FC_Ghost"
+    "OPTRE_FC_Ghost",
+    "OPTRE_FC_Ghost",
+    "OPTRE_FC_Ghost",
+	"OPTRE_FC_T26_AI",
+	"OPTRE_FC_T26_AT"
 ];
 
 // All enemy vehicles that can spawn as sector defenders and patrols at high enemy combat readiness (aggression levels).

@@ -75,6 +75,8 @@ if (GRLIB_endgame == 0) then {
 
         _position = markerPos _liberated_sector;
         _directions = [0, 45, 90, 135, 180, 225, 270, 315];
+        _scarab_chance = 15;
+        
         if (!_punished && combat_readiness >= 95) then {
             _punished = true;
             //Glass the area
@@ -82,9 +84,12 @@ if (GRLIB_endgame == 0) then {
         };
         if (!_punished && (combat_readiness > (40 + (30 / GRLIB_csat_aggressivity)))) then {
             _punished = true;
-            //Armed covenant cruiser
-            [_position, selectRandom _directions, 750, "COV_CCS", 1] call PHAN_ScifiSupportPlus_fnc_COV_ArmedCruiser;
-
+            //Armed covenant cruiser or Scarab
+            if(isClass (configfile >> "CfgPatches" >> "Mechanized_Scarab") && ((random 100) <= _scarab_chance)) then {
+                [_position, selectRandom _directions, selectRandom ["NJP_Scarab_Hull_Base", "NJP_Scarab_Hull_AT", "NJP_Scarab_Hull_AA", "NJP_Scarab_Hull_Cmdr", "NJP_Scarab_Hull_Cmdr_AA"]] call PHAN_ScifiSupportPlus_fnc_COV_ScarabDrop;
+            } else {
+                [_position, selectRandom _directions, 750, "COV_CCS", 1] call PHAN_ScifiSupportPlus_fnc_COV_ArmedCruiser;
+            };
         };
         if (!_punished && (combat_readiness > (20 + (30 / GRLIB_csat_aggressivity)))) then {
             _punished = true;

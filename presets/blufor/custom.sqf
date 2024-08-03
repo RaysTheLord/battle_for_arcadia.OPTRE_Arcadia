@@ -28,8 +28,8 @@ Respawn_truck_typename = "OPTRE_M12_FAV_APC_MED";                        // This
 huron_typename = "OPTRE_Pelican_unarmed";                       // This is Spartan 01, a multipurpose mobile respawn as a helicopter.
 crewman_classname = "OPTRE_UNSC_Marine_Soldier_Crewman";                                         // This defines the crew for vehicles.
 pilot_classname = "OPTRE_UNSC_Navy_Soldier_Olive";                                      // This defines the pilot for helicopters.
-KP_liberation_little_bird_classname = "OPTRE_UNSC_falcon";              // These are the little birds which spawn on the Freedom or at Chimera base.
-KP_liberation_boat_classname = "optre_catfish_mg_f";                 // These are the boats which spawn at the stern of the Freedom.
+KP_liberation_little_bird_classname = "OPTRE_UNSC_MH_144S_Falcon";              // These are the little birds which spawn on the Freedom or at Chimera base.
+KP_liberation_boat_classname = "optre_catfish_unarmed_f";                 // These are the boats which spawn at the stern of the Freedom.
 KP_liberation_truck_classname = "OPTRE_m1087_stallion_unsc";               // These are the trucks which are used in the logistic convoy system.
 KP_liberation_small_storage_building = "ContainmentArea_02_sand_F";     // A small storage area for resources.
 KP_liberation_large_storage_building = "ContainmentArea_01_sand_F";     // A large storage area for resources.
@@ -62,7 +62,15 @@ infantry_units = [
 	["OPTRE_UNSC_Marine_Soldier_Marksman",25,0,0],
 	["OPTRE_UNSC_Marine_Soldier_Sniper",75,0,0],
 	["OPTRE_UNSC_Navy_Soldier_Olive",5,0,0],
-	["OPTRE_UNSC_ODST_Soldier_TeamLeader",15,0,0]
+	["OPTRE_UNSC_Marine_Soldier_Paratrooper_AR",5,0,0],
+	["OPTRE_UNSC_ODST_Soldier_Rifleman_BR",10,0,0],
+	["OPTRE_UNSC_ODST_Soldier_Rifleman_AT",15,0,0],
+	["OPTRE_UNSC_ODST_Soldier_Paramedic",5,0,0],
+	["OPTRE_UNSC_ODST_Soldier_Automatic_Rifleman",10,0,0],
+	["OPTRE_UNSC_ODST_Soldier_Breacher2",5,0,0],
+	["OPTRE_UNSC_ODST_Soldier_DemolitionsExpert",10,0,0],
+	["OPTRE_UNSC_ODST_Soldier_Marksman",30,0,0],
+	["OPTRE_UNSC_ODST_Soldier_Scout_Sniper",80,0,0]
 ];
 
 light_vehicles = [
@@ -77,7 +85,11 @@ light_vehicles = [
 	["OPTRE_M12G1_LRV",10,10,0],
 	["OPTRE_M12R_AA",10,25,10],
 	["B_Boat_Transport_01_F",0,0,0],									//Assault Boat
-	["optre_catfish_mg_f",10,0,0]							
+	["optre_catfish_unarmed_f",0,0,0],
+	["optre_catfish_mg_f",10,0,0],	
+	["optre_catfish_gauss_f",10,10,0],
+	["optre_catfish_atgm_f",10,10,0],	
+	["optre_catfish_aa_f",10,25,10]	
 ];
 
 heavy_vehicles = [
@@ -109,13 +121,15 @@ air_vehicles = [
 	["OPTRE_UNSC_hornet",30,30,50],
 	["OPTRE_UNSC_hornet_CAP",30,30,50],
 	["OPTRE_UNSC_hornet_CAS",30,30,50],
-	["OPTRE_UNSC_falcon_unarmed",0,0,0],
-	["OPTRE_UNSC_falcon",0,10,15]
+	["OPTRE_UNSC_MH_144S_Falcon",0,0,0],
+	["OPTRE_UNSC_falcon_armed_S",0,10,15]
 ];
 
 static_vehicles = [
 	["OPTRE_Static_M247T_Tripod",25,20,0],	
-	["OPTRE_Static_M247H_Tripod",25,30,0],												
+	["OPTRE_Static_M247H_Tripod",25,30,0],	
+	["OPTRE_M37_Static_HMG",20,15,0],	
+	["OPTRE_AIE_486H_Static_HMG",20,15,0],		
 	["OPTRE_LAU65D_pod",35,40,0],	
 	["OPTRE_Static_M41",35,40,0],
 	["OPTRE_Static_Gauss",35,40,0],
@@ -126,9 +140,11 @@ static_vehicles = [
 	["B_GMG_01_F",35,60,0],												//Mk32A GMG 20mm
 	["B_GMG_01_high_F",35,60,0],										//Mk32 GMG 20mm (Raised)
 	["B_GMG_01_A_F",45,60,0],											//Mk32 GMG 20mm (Autonomous)
-	["B_Mortar_01_F",80,150,0],											//Mk6 Mortar
+	["OPTRE_AU_44_Mortar",80,150,0],											//Mk6 Mortar
     ["RHS_M119_WD",100,200,0],                                          // M119A2
-    ["B_SAM_System_03_F",250,500,0]                                     // MIM-145 Defender
+    ["B_Radar_System_01_F",100,0,0],                                     // radar
+    ["B_SAM_System_03_F",250,500,0],                                     // MIM-145 Defender
+	["OPTRE_Corvette_archer_system",600,500,0]
 ];
 
 buildings = [
@@ -152,6 +168,40 @@ buildings = [
 	["Land_OPTRE_ODST_Grave",0,0,0],
 	["Land_OPTRE_Soldier_Grave",0,0,0],
 	["Land_OPTRE_mil_antenna_mast",0,0,0],
+	["land_optre_bootcamp_radio_tower",0,0,0],	
+	["land_optre_bootcamp_UNSC_Flag",0,0,0],		
+	["land_optre_bootcamp_holotable",0,0,0],	
+	["land_optre_bootcamp_barrier_A",0,0,0],
+	["land_optre_bootcamp_barrier_B",0,0,0],
+	["land_optre_bootcamp_barrier_C",0,0,0],
+	["land_optre_bootcamp_barrier_gate",0,0,0],
+	["land_optre_bootcamp_barrier_D",0,0,0],	
+	["land_optre_bootcamp_wall",0,0,0],
+	["land_optre_bootcamp_wall_B",0,0,0],
+	["land_optre_bootcamp_gate",0,0,0],
+	["land_optre_bootcamp_gate_B",0,0,0],	
+	["land_optre_bootcamp_wall_end",0,0,0],
+	["land_optre_bootcamp_street_light_on",0,0,0],
+	["land_optre_street_pole",0,0,0],
+    ["land_optre_bootcamp_fence",0,0,0],
+	["land_optre_bootcamp_m_floor",0,0,0],
+	["land_optre_bootcamp_m_floor_10",0,0,0],
+	["land_optre_bootcamp_m_floor_20",0,0,0],	
+	["land_optre_bootcamp_bridge",0,0,0],
+	["land_optre_bootcamp_monolith",0,0,0],
+	["land_optre_bootcamp_m_stairs",0,0,0],
+	["land_optre_bootcamp_hangar_stairs_Small",0,0,0],	
+	["land_optre_bootcamp_hangar_stairs_large",0,0,0],
+	["land_optre_bootcamp_tower_stairs",0,0,0],
+	["land_optre_bootcamp_house_stairs",0,0,0],
+	["land_optre_bootcamp_tower",0,0,0],	
+	["land_optre_bootcamp_house_big",0,0,0],
+	["land_optre_bootcamp_house_big_2",0,0,0],
+	["land_optre_bootcamp_corner_building",0,0,0],
+    ["land_optre_bootcamp_hangar",0,0,0],
+	["land_optre_bootcamp_landing_pad",0,0,0],
+	["land_optre_bootcamp_barracks",0,0,0],
+	["land_optre_bootcamp_JTAC",0,0,0],	
     ["Land_Cargo_House_V1_F",0,0,0],
     ["Land_Cargo_Patrol_V1_F",0,0,0],
     ["Land_Cargo_Tower_V1_F",0,0,0],
@@ -236,6 +286,7 @@ support_vehicles = [
 	["OPTRE_m1087_stallion_unsc_repair",0,0,0],
 	["OPTRE_m1087_stallion_unsc_medical",0,0,0],
 	["OPTRE_M313_UNSC",250,0,150],
+    ["OPTRE_M808R_Engineer_UNSC",300,20,100],
     [Arsenal_typename,100,200,0],
     [Respawn_truck_typename,10,0,0],
     [FOB_box_typename,300,500,0],
@@ -373,5 +424,6 @@ elite_vehicles = [
 	"OPTRE_YSS_1000_A",									//A-164 Wipeout (CAS)
 	"OPTRE_YSS_1000_A_VTOL",												//F/A-181 Black Wasp II
 	"OPTRE_M808L",
+    "OPTRE_M875_SPH",
 	"OPTRE_M850_UNSC"
 ];
