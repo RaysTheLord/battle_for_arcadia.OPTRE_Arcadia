@@ -190,7 +190,7 @@ if (!isNil "_saveData") then {
         GRLIB_all_fobs                              = _saveData select  9;
         GRLIB_permissions                           = _saveData select 10;
         GRLIB_vehicle_to_military_base_links        = _saveData select 11;
-        KP_liberation_civ_rep                       = _saveData select 12;
+        KP_liberation_civ_rep                       = 100;
         KP_liberation_clearances                    = _saveData select 13;
         KP_liberation_guerilla_strength             = _saveData select 14;
         KP_liberation_logistics                     = _saveData select 15;

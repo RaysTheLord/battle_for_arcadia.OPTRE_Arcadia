@@ -46,7 +46,7 @@
 <Project name="Liberation">
     <Package name="Liberation">
         <Key ID="STR_MISSION_TITLE">
-            <Original>Halo: Battle For Humanity Liberation</Original>
+            <Original>Halo: Battle For Arcadia</Original>
         </Key>
         <Key ID="STR_MISSION_VERSION">
             <Original>v0.96.7a</Original>

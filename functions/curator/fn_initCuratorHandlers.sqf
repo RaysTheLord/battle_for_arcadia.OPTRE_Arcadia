@@ -20,7 +20,7 @@
 if (isServer) then {
 
     // delete old Liberation mission placed Zeus module
-    deleteVehicle zm1;
+    //deleteVehicle zm1;
 
     // add curator assign EventHandler
     [true, "KPLIB_createZeus", {
@@ -31,39 +31,45 @@ if (isServer) then {
 
         if (isNull _player) exitWith {};
         private _uid = getPlayerUID _player;
+        
+        private _zeus = zm1;
+        if (_limited) then {
+            deleteVehicle zm1;
+            // check if there's already a managed zeus module for this player, if so we can just reassign
+            private _oldManagedZeus = missionNamespace getVariable [ZEUSVAR(_uid), objNull];
+            if (!isNull _oldManagedZeus && {_limited isEqualTo (_oldManagedZeus getVariable ["KPLIB_limited", -1])}) exitWith {
+                _player assignCurator _oldManagedZeus;
+                [true, "KPLIB_zeusAssigned", [_oldManagedZeus]] remoteExecCall ["BIS_fnc_callScriptedEventHandler", _player];
+            };
 
-        // check if there's already a managed zeus module for this player, if so we can just reassign
-        private _oldManagedZeus = missionNamespace getVariable [ZEUSVAR(_uid), objNull];
-        if (!isNull _oldManagedZeus && {_limited isEqualTo (_oldManagedZeus getVariable ["KPLIB_limited", -1])}) exitWith {
-            _player assignCurator _oldManagedZeus;
-            [true, "KPLIB_zeusAssigned", [_oldManagedZeus]] remoteExecCall ["BIS_fnc_callScriptedEventHandler", _player];
+            // remove currently assigned curator
+            private _oldZeus = getAssignedCuratorLogic _player;
+            unassignCurator _oldZeus;
+            deleteVehicle _oldZeus;
+
+            private _group = createGroup [sideLogic, true];
+            _zeus = _group createUnit ["ModuleCurator_F", [-7580, -7580, 0], [], 0, "NONE"];        
         };
-
-        // remove currently assigned curator
-        private _oldZeus = getAssignedCuratorLogic _player;
-        unassignCurator _oldZeus;
-        deleteVehicle _oldZeus;
-
-        private _group = createGroup [sideLogic, true];
-        private _zeus = _group createUnit ["ModuleCurator_F", [-7580, -7580, 0], [], 0, "NONE"];
         missionNamespace setVariable [ZEUSVAR(_uid), _zeus];
 
         if (_limited) then {
             _zeus setVariable ["Addons", 0, true];
-            _zeus setVariable ["BIS_fnc_initModules_disableAutoActivation", false];
+            _zeus setVariable ["BIS_fnc_initModules_disableAutoActivation", false, true];
 
             _zeus setCuratorCoef ["Place", -1e8];
             _zeus setCuratorCoef ["Edit", -1e8];
             _zeus setCuratorCoef ["Destroy", -1e8];
             _zeus setCuratorCoef ["Delete", 0];
         } else {
+            /*
             _zeus setVariable ["Addons", 3, true];
-            _zeus setVariable ["BIS_fnc_initModules_disableAutoActivation", false];
+            _zeus setVariable ["BIS_fnc_initModules_disableAutoActivation", false, true];
 
             _zeus setCuratorCoef ["Place", 0];
             _zeus setCuratorCoef ["Delete", 0];
 
             removeAllCuratorAddons _zeus;
+            */
         };
 
         _zeus setVariable ["KPLIB_limited", _limited];
