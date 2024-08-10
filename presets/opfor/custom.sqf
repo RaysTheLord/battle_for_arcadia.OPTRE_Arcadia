@@ -33,8 +33,8 @@ opfor_transport_truck = "OPTRE_FC_Spectre_Transport";                         //
 opfor_ammobox_transport = "OPTRE_FC_Spectre_Empty";                     // Tempest Transport (Open) -> Has to be able to transport resource crates!
 opfor_fuel_truck = "OPTRE_FC_Spectre_Recovery";                                 // Tempest Fuel
 opfor_ammo_truck = "OPTRE_FC_Spectre_Recovery";                                 // Tempest Ammo
-opfor_fuel_container = "COV_Supply_Pod_CLOSED";             // Taru Fuel Pod
-opfor_ammo_container = "COV_Supply_Pod_OPEN";             // Taru Ammo Pod
+opfor_fuel_container = "Land_OPTRE_fusion_coil";             // Taru Fuel Pod
+opfor_ammo_container = "Land_OPTRE_fusion_coil";             // Taru Ammo Pod
 opfor_flag = "OPTRE_CTF_Flag_PurpleCOV";                                             // Flag
 
 /* Adding a value to these arrays below will add them to a one out of however many in the array, random pick chance.
