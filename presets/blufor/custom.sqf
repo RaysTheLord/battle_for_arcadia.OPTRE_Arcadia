@@ -286,6 +286,7 @@ support_vehicles = [
 	["OPTRE_m1087_stallion_unsc_refuel",0,0,0],
 	["OPTRE_m1087_stallion_unsc_repair",0,0,0],
 	["OPTRE_m1087_stallion_unsc_medical",0,0,0],
+	["OPTRE_cart",5,0,0],
 	["OPTRE_M313_UNSC",250,0,150],
     ["OPTRE_M808R_Engineer_UNSC",300,20,100],
     [Arsenal_typename,100,200,0],
