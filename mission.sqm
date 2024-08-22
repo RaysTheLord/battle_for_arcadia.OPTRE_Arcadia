@@ -12,22 +12,22 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=309;
+		nextID=319;
 	};
 	class LayerIndexProvider
 	{
-		nextID=26;
+		nextID=29;
 	};
 	class Camera
 	{
-		pos[]={233.77632,405.03745,11944.527};
-		dir[]={-0.19466202,-0.406066,0.89287019};
-		up[]={-0.08649797,0.91384375,0.3967464};
-		aside[]={0.97704905,7.4505806e-009,0.21301456};
+		pos[]={202.37723,169.03564,11864.618};
+		dir[]={0.0058863,-0.63262767,-0.77443367};
+		up[]={0.0048083249,0.77445614,-0.63260937};
+		aside[]={-0.99997115,2.3283064e-010,-0.0076005603};
 	};
 };
 binarizationWanted=0;
-sourceName="battle_for_arcadia";
+sourceName="battle_for_arcadia_spartan";
 addons[]=
 {
 	"A3_Ui_F",
@@ -36,10 +36,7 @@ addons[]=
 	"OPTRE_UNSC_Units_Navy",
 	"OPTRE_UNSC_Units_Army",
 	"A3_Characters_F",
-	"OPTRE_Weapons_Pistol",
-	"OPTRE_Weapons_Ammo",
-	"A3_Weapons_F",
-	"OPTRE_Weapons_Items",
+	"OPTRE_MJOLNIR_Units",
 	"A3_Structures_F_System",
 	"A3_Structures_F_Mil_Cargo",
 	"OPTRE_Corvette"
@@ -48,7 +45,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=10;
+		items=9;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -85,32 +82,25 @@ class AddonsMetaData
 		};
 		class Item5
 		{
-			className="OPTRE_Core";
-			name="OPTRE_Weapons_Pistol";
+			className="OPTRE_MJOLNIR_Units";
+			name="OPTRE_MJOLNIR_Units";
 			author="Article 2 Studios";
 		};
 		class Item6
-		{
-			className="A3_Weapons_F";
-			name="Arma 3 Alpha - Weapons and Accessories";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item7
 		{
 			className="A3_Structures_F";
 			name="Arma 3 - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item8
+		class Item7
 		{
 			className="A3_Structures_F_Mil";
 			name="Arma 3 - Military Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item9
+		class Item8
 		{
 			className="OPTRE_Corvette";
 			name="OPTRE_Corvette";
@@ -13435,65 +13425,18 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={203.45,153.79132,11846.325};
+						position[]={203.45,153.79156,11846.325};
 						angles[]={0.10791371,0,0.18615682};
 					};
 					side="West";
 					flags=6;
 					class Attributes
 					{
-						description="UAV and Intelligence@ONI Section 1";
+						description="SPARTAN II@SPARTAN Orange Team";
 						isPlayable=1;
-						class Inventory
-						{
-							class handgun
-							{
-								name="OPTRE_M6G_SF";
-								firemode="OPTRE_M6G_SF:Single";
-								class primaryMuzzleMag
-								{
-									name="OPTRE_8Rnd_127x40_Mag_Tracer";
-									ammoLeft=8;
-								};
-							};
-							class uniform
-							{
-								typeName="OPTRE_UNSC_Navy_Uniform_ONI";
-								isBackpack=0;
-								class MagazineCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="OPTRE_8Rnd_127x40_Mag_Tracer";
-										count=3;
-										ammoLeft=8;
-									};
-								};
-								class ItemCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="OPTRE_Biofoam";
-										count=1;
-									};
-								};
-							};
-							class backpack
-							{
-								typeName="B_UAV_01_backpack_F";
-								isBackpack=1;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-							hmd="OPTRE_NVG";
-						};
 					};
-					id=298;
-					type="OPTRE_UNSC_ONI_Soldier_Naval";
+					id=309;
+					type="OPTRE_Spartan2_Soldier";
 					class CustomAttributes
 					{
 						class Attribute0
@@ -13556,18 +13499,18 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={205.45499,154.0918,11847.306};
+						position[]={205.45499,154.09204,11847.306};
 						angles[]={0.10791112,0,0.20539537};
 					};
 					side="West";
 					flags=4;
 					class Attributes
 					{
-						description="UAV and Intelligence@ONI Section 1";
+						description="SPARTAN II@SPARTAN Orange Team";
 						isPlayable=1;
 					};
-					id=300;
-					type="OPTRE_UNSC_ONI_Soldier_Naval";
+					id=310;
+					type="OPTRE_Spartan2_Soldier";
 					class CustomAttributes
 					{
 						class Attribute0
@@ -13630,18 +13573,18 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={206.84393,154.44289,11846.736};
+						position[]={206.84393,154.44313,11846.736};
 						angles[]={0.10791112,0,0.20539537};
 					};
 					side="West";
 					flags=4;
 					class Attributes
 					{
-						description="UAV and Intelligence@ONI Section 1";
+						description="SPARTAN II@SPARTAN Orange Team";
 						isPlayable=1;
 					};
-					id=306;
-					type="OPTRE_UNSC_ONI_Soldier_Naval";
+					id=311;
+					type="OPTRE_Spartan2_Soldier";
 					class CustomAttributes
 					{
 						class Attribute0
@@ -13704,18 +13647,18 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={205.0551,154.17241,11845.793};
+						position[]={205.0551,154.17265,11845.793};
 						angles[]={0.10791112,0,0.20539537};
 					};
 					side="West";
 					flags=4;
 					class Attributes
 					{
-						description="UAV and Intelligence@ONI Section 1";
+						description="SPARTAN II@SPARTAN Orange Team";
 						isPlayable=1;
 					};
-					id=308;
-					type="OPTRE_UNSC_ONI_Soldier_Naval";
+					id=312;
+					type="OPTRE_Spartan2_Soldier";
 					class CustomAttributes
 					{
 						class Attribute0
@@ -13789,7 +13732,7 @@ class Mission
 						class data
 						{
 							singleType="STRING";
-							value="ONI Section 1";
+							value="SPARTAN Orange Team";
 						};
 					};
 				};
@@ -15247,67 +15190,18 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={217.25069,157.15643,11843.147};
-						angles[]={0.1095605,0,0.19097783};
+						position[]={219.351,157.99965,11840.697};
+						angles[]={0.10955431,0,0.21336651};
 					};
 					side="West";
-					flags=7;
+					flags=4;
 					class Attributes
 					{
-						description="Team Leader@ODST Alpha Six";
+						description="SPARTAN II@SPARTAN Team Bravo";
 						isPlayable=1;
 					};
-					id=292;
-					type="OPTRE_UNSC_ODST_Soldier_TeamLeader";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male12ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1.01;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={219.35069,157.99936,11840.697};
-						angles[]={0.10955995,0,0.21336932};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						description="Automatic Rifleman";
-						isPlayable=1;
-					};
-					id=293;
-					type="OPTRE_UNSC_ODST_Soldier_Automatic_Rifleman";
-					atlOffset=3.0517578e-005;
+					id=313;
+					type="OPTRE_Spartan2_Soldier";
 					class CustomAttributes
 					{
 						class Attribute0
@@ -15339,73 +15233,23 @@ class Mission
 						nAttributes=2;
 					};
 				};
-				class Item2
+				class Item1
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={215.15068,156.96642,11840.697};
-						angles[]={0.10131844,0,0.19899866};
+						position[]={217.25101,157.78778,11838.197};
+						angles[]={0.10297443,0,0.19900244};
 					};
 					side="West";
-					flags=5;
+					flags=4;
 					class Attributes
 					{
-						description="ODST Marksman";
+						description="SPARTAN II@SPARTAN Team Bravo";
 						isPlayable=1;
 					};
-					id=294;
-					type="OPTRE_UNSC_ODST_Soldier_Scout_Sniper";
-					atlOffset=3.0517578e-005;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male05GRE";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.97000003;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item3
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={217.25069,157.78748,11838.197};
-						angles[]={0.10296748,0,0.19899896};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						description="Demolitions Expert";
-						isPlayable=1;
-					};
-					id=295;
-					type="OPTRE_UNSC_ODST_Soldier_DemolitionsExpert";
-					atlOffset=1.5258789e-005;
+					id=314;
+					type="OPTRE_Spartan2_Soldier";
 					class CustomAttributes
 					{
 						class Attribute0
@@ -15450,24 +15294,23 @@ class Mission
 						nAttributes=3;
 					};
 				};
-				class Item4
+				class Item2
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={219.35069,158.68369,11835.697};
-						angles[]={0.1029669,0,0.22606915};
+						position[]={219.351,158.68398,11835.697};
+						angles[]={0.10297443,0,0.22607249};
 					};
 					side="West";
-					flags=5;
+					flags=4;
 					class Attributes
 					{
-						description="Medic";
+						description="SPARTAN II@SPARTAN Team Bravo";
 						isPlayable=1;
 					};
-					id=296;
-					type="OPTRE_UNSC_ODST_Soldier_Paramedic";
-					atlOffset=3.0517578e-005;
+					id=315;
+					type="OPTRE_Spartan2_Soldier";
 					class CustomAttributes
 					{
 						class Attribute0
@@ -15499,24 +15342,24 @@ class Mission
 						nAttributes=2;
 					};
 				};
-				class Item5
+				class Item3
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={215.15068,157.60837,11835.697};
-						angles[]={0.10296748,0,0.19899896};
+						position[]={215.151,157.60867,11835.697};
+						angles[]={0.10297443,0,0.19900244};
 					};
 					side="West";
-					flags=5;
+					flags=4;
 					class Attributes
 					{
-						description="Rifleman";
+						description="SPARTAN II@SPARTAN Team Bravo";
 						isPlayable=1;
 					};
-					id=297;
-					type="OPTRE_UNSC_ODST_Soldier_Rifleman_BR";
-					atlOffset=3.0517578e-005;
+					id=316;
+					type="OPTRE_Spartan2_Soldier";
+					atlOffset=1.5258789e-005;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -15548,10 +15391,106 @@ class Mission
 						nAttributes=2;
 					};
 				};
+				class Item4
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={215.151,156.96671,11840.697};
+						angles[]={0.10131636,0,0.19900244};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						description="SPARTAN II@SPARTAN Team Bravo";
+						isPlayable=1;
+					};
+					id=317;
+					type="OPTRE_Spartan2_Soldier";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male05GRE";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=0.97000003;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item5
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={217.25101,157.15674,11843.147};
+						angles[]={0.10955431,0,0.19097394};
+					};
+					side="West";
+					flags=6;
+					class Attributes
+					{
+						description="SPARTAN II@SPARTAN Team Bravo";
+						isPlayable=1;
+					};
+					id=318;
+					type="OPTRE_Spartan2_Soldier";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male12ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1.01;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
 			};
 			class Attributes
 			{
-				name="odst_team_2";
+				name="spartan_team_2";
 				formation="DIAMOND";
 			};
 			id=291;
@@ -15566,7 +15505,7 @@ class Mission
 						class data
 						{
 							singleType="STRING";
-							value="ODST Alpha Six";
+							value="SPARTAN Team Bravo";
 						};
 					};
 				};
