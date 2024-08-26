@@ -128,6 +128,7 @@ opfor_choppers = [
 
 // Enemy fixed-wings that will need to spawn in the air.
 opfor_air = [
+	"OPTRE_FC_Type26B_Banshee",
 	"OPTRE_FC_Type27_Banshee",									//To-199 Neophron (CAS)
 	"OPTRE_FC_Type26N_Banshee"												//To-201 Shikra
 ];

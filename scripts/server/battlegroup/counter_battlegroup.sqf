@@ -6,7 +6,7 @@ sleep 1800;
 private _sleeptime = 0;
 private _target_player = objNull;
 private _target_pos = "";
-while {GRLIB_csat_aggressivity >= 0.9 && GRLIB_endgame == 0} do {
+while { GRLIB_endgame == 0} do {
     _sleeptime = (1800 + (random 1800)) / (([] call KPLIB_fnc_getOpforFactor) * GRLIB_csat_aggressivity);
 
     if (combat_readiness >= 80) then {_sleeptime = _sleeptime * 0.75;};
@@ -16,14 +16,14 @@ while {GRLIB_csat_aggressivity >= 0.9 && GRLIB_endgame == 0} do {
     sleep _sleeptime;
 
     waitUntil {sleep 5;
-        combat_readiness >= 70 && {armor_weight >= 50 || air_weight >= 50}
+        combat_readiness >= 20}
     };
 
     _target_player = objNull;
     {
         if (
-            (armor_weight >= 50 && {(objectParent _x) isKindOf "Tank"})
-            || (air_weight >= 50 && {(objectParent _x) isKindOf "Air"})
+            ({(objectParent _x) isKindOf "Tank"})
+            || ({(objectParent _x) isKindOf "Air"})
         ) exitWith {
             _target_player = _x;
         };
