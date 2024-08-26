@@ -87,7 +87,7 @@ if !(_spawn_marker isEqualTo "") then {
             };
         } forEach _selected_opfor_battlegroup;
 
-        if (GRLIB_csat_aggressivity > 0.2) then {
+        if (combat_readiness >= 20) then {
             [[markerPos _spawn_marker] call KPLIB_fnc_getNearestBluforObjective] spawn spawn_air;
         };
     };

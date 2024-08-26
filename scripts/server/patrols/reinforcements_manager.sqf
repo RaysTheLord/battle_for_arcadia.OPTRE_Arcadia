@@ -30,6 +30,10 @@ if (combat_readiness > 15) then {
                 reinforcements_set = true;
                 ["lib_reinforcements",[markertext _targetsector]] remoteExec ["bis_fnc_shownotification"];
                 [_targetsector] spawn send_paratroopers;
+                _targetsector spawn {
+                    sleep 5;
+                    [[markerPos _this] call KPLIB_fnc_getNearestBluforObjective] spawn spawn_air;
+                };
                 
                 //COVENANT ASSAULT
                 _punished = false;
