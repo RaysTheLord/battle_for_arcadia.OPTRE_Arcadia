@@ -16,7 +16,7 @@ while { GRLIB_endgame == 0} do {
     sleep _sleeptime;
 
     waitUntil {sleep 5;
-        combat_readiness >= 20}
+        combat_readiness >= 20;
     };
 
     _target_player = objNull;

@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=27;
+		nextID=29;
 	};
 	class Camera
 	{
-		pos[]={2158.6536,258.2858,10692.159};
-		dir[]={-0.38762212,-0.46725515,-0.79462183};
-		up[]={-0.20485668,0.8841213,-0.41995451};
-		aside[]={-0.89876848,-4.1291059e-008,0.43842557};
+		pos[]={2149.3606,229.66544,10598.375};
+		dir[]={-0.73399645,-0.60177422,0.31483048};
+		up[]={-0.55304694,0.79866594,0.2372164};
+		aside[]={0.3941952,3.7136488e-08,0.91902679};
 	};
 };
 binarizationWanted=0;
@@ -36,8 +36,8 @@ addons[]=
 	"OPTRE_UNSC_Units_Navy",
 	"OPTRE_UNSC_Units_Army",
 	"A3_Characters_F",
+	"OPTRE_Weapons_M6G",
 	"OPTRE_Weapons_Pistol",
-	"OPTRE_Weapons_Ammo",
 	"A3_Weapons_F",
 	"OPTRE_Weapons_Items",
 	"A3_Structures_F_System",
@@ -48,7 +48,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=10;
+		items=11;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -85,8 +85,8 @@ class AddonsMetaData
 		};
 		class Item5
 		{
-			className="OPTRE_Core";
-			name="OPTRE_Weapons_Pistol";
+			className="OPTRE_Weapons_Pistol";
+			name="OPTRE_Weapons_M6G";
 			author="Article 2 Studios";
 		};
 		class Item6
@@ -98,19 +98,25 @@ class AddonsMetaData
 		};
 		class Item7
 		{
+			className="OPTRE_Core";
+			name="OPTRE_Weapons_Items";
+			author="Article 2 Studios";
+		};
+		class Item8
+		{
 			className="A3_Structures_F";
 			name="Arma 3 - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item8
+		class Item9
 		{
 			className="A3_Structures_F_Mil";
 			name="Arma 3 - Military Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item9
+		class Item10
 		{
 			className="OPTRE_Corvette";
 			name="OPTRE_Corvette";
@@ -11800,7 +11806,7 @@ class Mission
 			name="zm1";
 			id=188;
 			type="ModuleCurator_F";
-			atlOffset=1.5258789e-005;
+			atlOffset=1.5258789e-05;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -13020,7 +13026,7 @@ class Mission
 					};
 					id=281;
 					type="OPTRE_UNSC_Navy_Soldier_White";
-					atlOffset=1.5258789e-005;
+					atlOffset=1.5258789e-05;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -15307,7 +15313,7 @@ class Mission
 					};
 					id=293;
 					type="OPTRE_UNSC_ODST_Soldier_Automatic_Rifleman";
-					atlOffset=3.0517578e-005;
+					atlOffset=3.0517578e-05;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -15356,7 +15362,7 @@ class Mission
 					};
 					id=294;
 					type="OPTRE_UNSC_ODST_Soldier_Scout_Sniper";
-					atlOffset=3.0517578e-005;
+					atlOffset=3.0517578e-05;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -15405,7 +15411,7 @@ class Mission
 					};
 					id=295;
 					type="OPTRE_UNSC_ODST_Soldier_DemolitionsExpert";
-					atlOffset=1.5258789e-005;
+					atlOffset=1.5258789e-05;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -15467,7 +15473,7 @@ class Mission
 					};
 					id=296;
 					type="OPTRE_UNSC_ODST_Soldier_Paramedic";
-					atlOffset=3.0517578e-005;
+					atlOffset=3.0517578e-05;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -15516,7 +15522,7 @@ class Mission
 					};
 					id=297;
 					type="OPTRE_UNSC_ODST_Soldier_Rifleman_BR";
-					atlOffset=3.0517578e-005;
+					atlOffset=3.0517578e-05;
 					class CustomAttributes
 					{
 						class Attribute0
